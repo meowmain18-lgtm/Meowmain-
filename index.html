@@ -1,67 +1,143 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Meowmain — Cat Lovers Pastel Shop</title>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meowmain — Cute Pastel Cat Designs</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
-</head><body>
+<link rel="icon" href="assets/favicon.png">
+<style>
+:root{--bg1:#FFEAF3;--bg2:#FFF7FB;--accent1:#ff9bb7;--accent2:#ff70a6;--muted:#6b6b6b;--card:#ffffffcc;--glass: rgba(255,255,255,0.6);--maxw:1100px}
+*{box-sizing:border-box;font-family:Poppins,system-ui,Arial;margin:0;padding:0}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(120deg,var(--bg1),var(--bg2));overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;background:linear-gradient(90deg, rgba(255,217,235,0.35), rgba(237,243,255,0.35), rgba(255,240,245,0.35));filter:blur(40px);opacity:0.95;mix-blend-mode:screen;animation:moveGradient 14s linear infinite}
+@keyframes moveGradient{0%{transform:translateX(-12%)}50%{transform:translateX(12%)}100%{transform:translateX(-12%)}}
+.container{position:relative;z-index:2;max-width:var(--maxw);width:100%;padding:28px}
+header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px;background:var(--glass);backdrop-filter:blur(6px);border-radius:14px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:56px;height:56px;border-radius:12px;object-fit:cover}
+.brand h1{font-size:20px;margin:0;color:#3b3b4a}
+.nav-links{display:flex;gap:12px;align-items:center}
+.nav-links a{text-decoration:none;color:#3b3b4a;font-weight:600;padding:8px 12px;border-radius:10px}
+.btn-shop{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700}
+.hero{display:flex;align-items:center;gap:22px;margin-top:18px;padding:22px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55));box-shadow:0 8px 30px rgba(15,15,15,0.05)}
+.hero-text h2{font-size:28px;margin:0;color:#3b3b4a}
+.hero-text p{color:var(--muted);margin-top:8px}
+.hero img{width:260px;border-radius:12px;object-fit:cover}
+.section-title{margin-top:22px;font-size:18px;color:#3b3b4a;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px}
+.card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.06);display:flex;flex-direction:column}
+.card img{width:100%;height:260px;object-fit:cover;border-bottom-left-radius:0;border-bottom-right-radius:0;border-top-left-radius:12px;border-top-right-radius:12px}
+.card-body{padding:12px}
+.card-body h3{margin:0;font-size:15px;color:#333}
+.card-body p{margin:6px 0 0;color:var(--muted);font-size:13px}
+.card-body a{display:inline-block;margin-top:12px;text-decoration:none;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:10px 12px;border-radius:10px;font-weight:700}
+.fav-grid{display:flex;gap:12px;margin-top:18px}
+.fav{flex:1;background:var(--card);border-radius:14px;padding:12px;display:flex;gap:12px;align-items:center}
+.fav img{width:120px;height:100px;object-fit:cover;border-radius:12px}
+.fav h4{margin:0}
+footer{margin-top:26px;text-align:center;color:var(--muted);padding:18px 0}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.hero img{display:none}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.hero{flex-direction:column;gap:12px}header{flex-direction:column;align-items:flex-start}}
+.card:hover{transform:translateY(-6px);transition:transform 220ms ease}
+.card img{transition:transform 220ms ease}
+.card:hover img{transform:scale(1.03)}
+</style>
+</head>
+<body>
 <div class="container">
-  <nav>
-    <div class="logo"><img src="assets/logo.png" alt="Meowmain logo"><div><strong>Meowmain</strong></div></div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="about.html">About</a>
-      <a class="btn-primary" href="https://tee.pub/lic/TQ0gR9cf1DE" target="_blank">Shop on TeePublic</a>
+  <header>
+    <div class="brand">
+      <img src="assets/logo.png" alt="Meowmain logo">
+      <div><h1>Meowmain <span style="font-size:13px;color:var(--muted);display:block;font-weight:600">Cute Pastel Cat Designs</span></h1></div>
     </div>
-  </nav>
-
-  <section class="hero">
+    <nav class="nav-links">
+      <a href="#products">Shop</a>
+      <a href="#about">About</a>
+      <a class="btn-shop" href="https://tee.pub/lic/TQ0gR9cf1DE" target="_blank" rel="noopener">Shop on TeePublic</a>
+    </nav>
+  </header>
+  <section class="hero" style="margin-top:18px">
     <div class="hero-text">
-      <h1>Welcome to Meowmain — Where cat lovers meet style 🐾</h1>
-      <p>Cozy pastel-inspired apparel & gifts for cat lovers. Discover original designs and shop directly on TeePublic.</p>
-      <div style="margin-top:14px"><a class="btn-primary" href="shop.html">Shop Now</a></div>
+      <h2>Welcome to Meowmain — Where Cat Lovers Meet Style 🐾</h2>
+      <p>Cute pastel cat designs curated with love. Browse our favorites and shop directly on TeePublic.</p>
     </div>
-    <div style="flex:0 0 300px"><img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=800&auto=format&fit=crop" style="width:100%;border-radius:12px"></div>
+    <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=800&auto=format&fit=crop" alt="cute cat">
   </section>
-
-  <section style="margin-top:20px">
-    <h2 style="font-size:20px;margin:0">Best Sellers</h2>
+  <section id="products">
+    <h3 class="section-title">Best Cat Lover Designs 🐾</h3>
     <div class="grid">
 
     <article class="card">
-      <a href="https://www.teepublic.com/t-shirt/79631850-neon-ride-synthwave-cat-in-a-lamborghini-countach?store_id=3984178" target="_blank"><img src="https://images.teepublic.com/derived/production/designs/79631850_0/1756729796/i_m%3Abi_production_blanks_mtl53ofohwq5goqjo9ke_1462829015%2Cc_49_0_371x%2Cs_630%2Cq_90.jpg" alt="Neon Ride Synthwave Cat"></a>
+      <a href="https://www.teepublic.com/t-shirt/80810561-pastel-chibi-british-shorthair-cat-mom-gift?store_id=3984178" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1200&auto=format&fit=crop" alt="Pastel Chibi British Shorthair"></a>
       <div class="card-body">
-        <h3>Neon Ride Synthwave Cat</h3>
-        <p>Premium soft fabric. Available on TeePublic.</p>
-        <div style="margin-top:10px"><a class="btn-primary" href="https://www.teepublic.com/t-shirt/79631850-neon-ride-synthwave-cat-in-a-lamborghini-countach?store_id=3984178" target="_blank">View on TeePublic</a></div>
+        <h3>Pastel Chibi British Shorthair</h3>
+        <p>Original Meowmain design — printed & shipped by TeePublic.</p>
+        <a href="https://www.teepublic.com/t-shirt/80810561-pastel-chibi-british-shorthair-cat-mom-gift?store_id=3984178" target="_blank" rel="noopener">Shop now on TeePublic</a>
       </div>
     </article>
     
     <article class="card">
-      <a href="https://www.teepublic.com/t-shirt/82199687-my-heart-belongs-to-a-ragdoll-cat-cute-fluffy-pet-?store_id=3984178" target="_blank"><img src="https://images.teepublic.com/derived/production/designs/82199687_0/1761234567/i_m%3Abi_production_blanks_example.jpg" alt="My Heart Belongs to a Ragdoll Cat"></a>
+      <a href="https://www.teepublic.com/t-shirt/80804484-ragdoll-cat-cuddle-season-autumn-cozy-kittens-fall?store_id=3984178" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1200&auto=format&fit=crop" alt="Ragdoll Cat Cuddle Season"></a>
       <div class="card-body">
-        <h3>My Heart Belongs to a Ragdoll Cat</h3>
-        <p>Premium soft fabric. Available on TeePublic.</p>
-        <div style="margin-top:10px"><a class="btn-primary" href="https://www.teepublic.com/t-shirt/82199687-my-heart-belongs-to-a-ragdoll-cat-cute-fluffy-pet-?store_id=3984178" target="_blank">View on TeePublic</a></div>
+        <h3>Ragdoll Cat Cuddle Season</h3>
+        <p>Original Meowmain design — printed & shipped by TeePublic.</p>
+        <a href="https://www.teepublic.com/t-shirt/80804484-ragdoll-cat-cuddle-season-autumn-cozy-kittens-fall?store_id=3984178" target="_blank" rel="noopener">Shop now on TeePublic</a>
       </div>
     </article>
     
     <article class="card">
-      <a href="https://www.teepublic.com/t-shirt/81532264-strong-like-a-lion-chill-like-a-cat-funny-gym-work?store_id=3984178" target="_blank"><img src="https://images.teepublic.com/derived/production/designs/81532264_0/1760027934/i_m%3Abi_production_blanks_mtl53ofohwq5goqjo9ke_1462829015%2Cc_38_0_395x%2Cs_630%2Cq_90.jpg" alt="Strong Like a Lion — Chill Like a Cat"></a>
+      <a href="https://www.teepublic.com/t-shirt/80758639-maine-coon-cat-coffee-and-chill-retro-design-for-c?store_id=3984178" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1520975914592-4f6b5f0b3c7b?q=80&w=1200&auto=format&fit=crop" alt="Maine Coon Coffee & Chill"></a>
       <div class="card-body">
-        <h3>Strong Like a Lion — Chill Like a Cat</h3>
-        <p>Premium soft fabric. Available on TeePublic.</p>
-        <div style="margin-top:10px"><a class="btn-primary" href="https://www.teepublic.com/t-shirt/81532264-strong-like-a-lion-chill-like-a-cat-funny-gym-work?store_id=3984178" target="_blank">View on TeePublic</a></div>
+        <h3>Maine Coon Coffee & Chill</h3>
+        <p>Original Meowmain design — printed & shipped by TeePublic.</p>
+        <a href="https://www.teepublic.com/t-shirt/80758639-maine-coon-cat-coffee-and-chill-retro-design-for-c?store_id=3984178" target="_blank" rel="noopener">Shop now on TeePublic</a>
+      </div>
+    </article>
+    
+    <article class="card">
+      <a href="https://www.teepublic.com/t-shirt/80627984-folded-ears-full-of-love-scottish-fold-cat-design?store_id=3984178" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Folded Ears, Full of Love"></a>
+      <div class="card-body">
+        <h3>Folded Ears, Full of Love</h3>
+        <p>Original Meowmain design — printed & shipped by TeePublic.</p>
+        <a href="https://www.teepublic.com/t-shirt/80627984-folded-ears-full-of-love-scottish-fold-cat-design?store_id=3984178" target="_blank" rel="noopener">Shop now on TeePublic</a>
+      </div>
+    </article>
+    
+    <article class="card">
+      <a href="https://www.teepublic.com/t-shirt/80560703-fluffy-potato-cat-cute-scottish-fold-kitten?store_id=3984178" target="_blank" rel="noopener"><img src="https://images.teepublic.com/derived/production/designs/80560703_0/1758225968/i_p%3Ac_eae0c7%2Cs_630%2Cq_90.jpg" alt="My Mini Leopard – Bengal Cat Lover"></a>
+      <div class="card-body">
+        <h3>My Mini Leopard – Bengal Cat Lover</h3>
+        <p>Original Meowmain design — printed & shipped by TeePublic.</p>
+        <a href="https://www.teepublic.com/t-shirt/80560703-fluffy-potato-cat-cute-scottish-fold-kitten?store_id=3984178" target="_blank" rel="noopener">Shop now on TeePublic</a>
+      </div>
+    </article>
+    
+    <article class="card">
+      <a href="https://www.teepublic.com/t-shirt/82199687-my-heart-belongs-to-a-ragdoll-cat-cute-fluffy-pet-?store_id=3984178" target="_blank" rel="noopener"><img src="https://images.teepublic.com/derived/production/designs/82199687_0/1761234567/i_m%3Abi_production_blanks_example.jpg" alt="Ragdoll Cat Professional Chiller"></a>
+      <div class="card-body">
+        <h3>Ragdoll Cat Professional Chiller</h3>
+        <p>Original Meowmain design — printed & shipped by TeePublic.</p>
+        <a href="https://www.teepublic.com/t-shirt/82199687-my-heart-belongs-to-a-ragdoll-cat-cute-fluffy-pet-?store_id=3984178" target="_blank" rel="noopener">Shop now on TeePublic</a>
       </div>
     </article>
     
     </div>
   </section>
-
-  <footer class="footer">
-    Follow us on Instagram <a href="https://instagram.com/meowmain" target="_blank">@meowmain</a>
-    <div style="margin-top:8px;color:#999">© Meowmain</div>
+  <section id="favorites">
+    <h3 class="section-title">Customer Favorites 💕</h3>
+    <div class="fav-grid">
+      <div class="fav"><img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1200&auto=format&fit=crop" alt="fav"><div><h4>Pastel Chibi British Shorthair</h4><p style="color:var(--muted);margin-top:6px">Our customers love this soft pastel chibi design.</p></div></div>
+      <div class="fav"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1200&auto=format&fit=crop" alt="fav"><div><h4>Ragdoll Cuddle Season</h4><p style="color:var(--muted);margin-top:6px">Cozy vibes for autumn and beyond.</p></div></div>
+      <div class="fav"><img src="https://images.unsplash.com/photo-1520975914592-4f6b5f0b3c7b?q=80&w=1200&auto=format&fit=crop" alt="fav"><div><h4>Maine Coon Coffee & Chill</h4><p style="color:var(--muted);margin-top:6px">Retro coffee cat mood.</p></div></div>
+    </div>
+  </section>
+  <section id="about" style="margin-top:22px;background:linear-gradient(180deg,rgba(255,255,255,0.7),rgba(255,255,255,0.5));padding:16px;border-radius:12px">
+    <h3 class="section-title">About Meowmain</h3>
+    <p style="color:var(--muted);margin-top:8px">Meowmain is a cozy pastel world for cat lovers around the globe. Each piece is made with love, softness, and a lot of purrs 💗🐾.</p>
+  </section>
+  <footer style="margin-top:20px">
+    <p>Follow us on Instagram <a href="https://instagram.com/meowmain" target="_blank" rel="noopener">@meowmain</a> 💕</p>
   </footer>
 </div>
-</body></html>
+</body>
+</html>
